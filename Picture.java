@@ -7,14 +7,23 @@
  * This class was written as an early example for teaching Java with BlueJ.
  * 
  * @author  Catherine Oldfield
- * @version 2016.02.29
+ * @version 2020-09-09
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Square sky;
+    private Circle water;
+    private Triangle ground;
+    private Person woman;
+    private Person man;
+    private Circle star1;
+    private Circle star2;
+    private Circle star3;
+    private Circle star4;
+    private Circle star5;
+    private Circle star6;
+    private Circle star7;
+    private Circle star8;
     private boolean drawn;
 
     /**
@@ -22,10 +31,19 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
-        sun = new Circle();
+        sky = new Square();
+        water = new Circle();
+        ground = new Triangle();
+        woman = new Person();
+        man = new Person();
+        star1 = new Circle();
+        star2 = new Circle();
+        star3 = new Circle();
+        star4 = new Circle();
+        star5 = new Circle();
+        star6 = new Circle();
+        star7 = new Circle();
+        star8 = new Circle();
         drawn = false;
     }
 
@@ -35,11 +53,11 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.changeColor("blue");
-            wall.makeVisible();
+            sky.moveHorizontal(-140);
+            sky.moveVertical(20);
+            sky.changeSize(120);
+            sky.changeColor("blue");
+            sky.makeVisible();
             
             window.changeColor("black");
             window.moveHorizontal(-120);
@@ -66,7 +84,7 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
+        sky.changeColor("black");
         window.changeColor("white");
         roof.changeColor("black");
         sun.changeColor("black");
@@ -77,7 +95,7 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
+        sky.changeColor("red");
         window.changeColor("black");
         roof.changeColor("green");
         sun.changeColor("yellow");
