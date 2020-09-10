@@ -11,12 +11,18 @@
  * course teachings to make a "better" version. There are deliberate 
  * redundancies in code for that reason.
  * 
+ * The original painting can be viewed at
+ * https://en.wikipedia.org/wiki/Starry_Night_Over_the_Rh%C3%B4ne
+ * 
  * @author  Catherine Oldfield
  * @version 2020-09-09
  */
 public class Picture
 {
     private Square sky;
+    private Square houseBase;
+    private Square houseUpper;
+    private Triangle houseRoof;
     private Circle water;
     private Triangle ground;
     private Person woman;
@@ -39,6 +45,9 @@ public class Picture
     public Picture()
     {
         sky = new Square();
+        houseBase = new Square();
+        houseUpper = new Square();
+        houseRoof = new Triangle();
         water = new Circle();
         ground = new Triangle();
         woman = new Person();
@@ -67,6 +76,24 @@ public class Picture
             sky.changeSize(500);
             sky.changeColor("blue");
             sky.makeVisible();
+            
+            houseBase.moveHorizontal(-250);
+            houseBase.moveVertical(25);
+            houseBase.changeSize(30);
+            houseBase.changeColor("black");
+            houseBase.makeVisible();
+            
+            houseUpper.moveHorizontal(-250);
+            houseUpper.moveVertical(-5);
+            houseUpper.changeSize(30);
+            houseUpper.changeColor("black");
+            houseUpper.makeVisible();
+            
+            houseRoof.moveHorizontal(-135);
+            houseRoof.moveVertical(-45);
+            houseRoof.changeSize(20, 40);
+            houseRoof.changeColor("black");
+            houseRoof.makeVisible();
             
             water.moveHorizontal(-800);
             water.moveVertical(40);
@@ -137,19 +164,19 @@ public class Picture
             star7.moveHorizontal(180);
             star7.moveVertical(5);
             star7.changeSize(10);
-            star7.changeColor("magenta");
+            star7.changeColor("yellow");
             star7.makeVisible();
             
             star8.moveHorizontal(220);
             star8.moveVertical(-35);
             star8.changeSize(15);
-            star8.changeColor("magenta");
+            star8.changeColor("yellow");
             star8.makeVisible();
             
             star9.moveHorizontal(250);
             star9.moveVertical(-25);
             star9.changeSize(10);
-            star9.changeColor("magenta");
+            star9.changeColor("yellow");
             star9.makeVisible();
             
             drawn = true;
@@ -162,6 +189,9 @@ public class Picture
     public void setBlackAndWhite()
     {
         sky.changeColor("black");
+        houseBase.changeColor("white");
+        houseUpper.changeColor("white");
+        houseRoof.changeColor("white");
         water.changeColor("white");
         ground.changeColor("black");
         woman.changeColor("white");
@@ -184,10 +214,14 @@ public class Picture
     public void setColor()
     {
         sky.changeColor("blue");
+        houseBase.changeColor("black");
+        houseUpper.changeColor("black");
+        houseRoof.changeColor("black");
         water.changeColor("green");
         ground.changeColor("blue");
-        woman.changeColor("magenta");
+        woman.changeColor("red");
         man.changeColor("black");
+        star0.changeColor("yellow");
         star1.changeColor("yellow");
         star1.changeColor("yellow");
         star2.changeColor("yellow");
@@ -197,6 +231,6 @@ public class Picture
         star6.changeColor("yellow");
         star7.changeColor("yellow");
         star8.changeColor("yellow");
-        star9.changeColor("white");
+        star9.changeColor("yellow");
     }
 }
