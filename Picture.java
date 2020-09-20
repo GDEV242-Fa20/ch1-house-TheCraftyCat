@@ -6,15 +6,37 @@
  *
  * This class was written as an early example for teaching Java with BlueJ.
  * 
- * @author  Michael Kšlling and David J. Barnes
- * @version 2016.02.29
+ * A take on Van Gogh's Starry Night over the Rhone, with the idea of 
+ * revisiting the project at the end of the semester and applying the
+ * course teachings to make a "better" version. There are deliberate 
+ * redundancies in code for that reason.
+ * 
+ * The original painting can be viewed at
+ * https://en.wikipedia.org/wiki/Starry_Night_Over_the_Rh%C3%B4ne
+ * 
+ * @author  Catherine Oldfield
+ * @version 2020-09-09
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
-    private Circle sun;
+    private Square sky;
+    private Square houseBase;
+    private Square houseUpper;
+    private Triangle houseRoof;
+    private Circle water;
+    private Triangle ground;
+    private Person woman;
+    private Person man;
+    private Circle star0;
+    private Circle star1;
+    private Circle star2;
+    private Circle star3;
+    private Circle star4;
+    private Circle star5;
+    private Circle star6;
+    private Circle star7;
+    private Circle star8;
+    private Circle star9;
     private boolean drawn;
 
     /**
@@ -22,10 +44,24 @@ public class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
-        sun = new Circle();
+        sky = new Square();
+        houseBase = new Square();
+        houseUpper = new Square();
+        houseRoof = new Triangle();
+        water = new Circle();
+        ground = new Triangle();
+        woman = new Person();
+        man = new Person();
+        star0 = new Circle();
+        star1 = new Circle();
+        star2 = new Circle();
+        star3 = new Circle();
+        star4 = new Circle();
+        star5 = new Circle();
+        star6 = new Circle();
+        star7 = new Circle();
+        star8 = new Circle();
+        star9 = new Circle();
         drawn = false;
     }
 
@@ -35,28 +71,114 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.changeColor("blue");
-            wall.makeVisible();
+            sky.moveHorizontal(-310);
+            sky.moveVertical(-300);
+            sky.changeSize(500);
+            sky.changeColor("blue");
+            sky.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
-            sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
+            houseBase.moveHorizontal(-250);
+            houseBase.moveVertical(25);
+            houseBase.changeSize(30);
+            houseBase.changeColor("black");
+            houseBase.makeVisible();
+            
+            houseUpper.moveHorizontal(-250);
+            houseUpper.moveVertical(-5);
+            houseUpper.changeSize(30);
+            houseUpper.changeColor("black");
+            houseUpper.makeVisible();
+            
+            houseRoof.moveHorizontal(-135);
+            houseRoof.moveVertical(-45);
+            houseRoof.changeSize(20, 40);
+            houseRoof.changeColor("black");
+            houseRoof.makeVisible();
+            
+            water.moveHorizontal(-800);
+            water.moveVertical(40);
+            water.changeSize(1800);
+            water.changeColor("green");
+            water.makeVisible();
+            
+            ground.moveHorizontal(75);
+            ground.moveVertical(60);
+            ground.changeSize(120, 600);
+            ground.changeColor("blue");
+            ground.makeVisible();
+                        
+            woman.moveHorizontal(75);
+            woman.moveVertical(65);
+            woman.changeSize(60, 30);
+            woman.changeColor("red");
+            woman.makeVisible();
+            
+            man.moveHorizontal(55);
+            man.moveVertical(60);
+            man.changeSize(70, 30);
+            man.changeColor("black");
+            man.makeVisible();
+            
+            star0.moveHorizontal(-200);
+            star0.moveVertical(-40);
+            star0.changeSize(10);
+            star0.changeColor("yellow");
+            star0.makeVisible();
+            
+            star1.moveHorizontal(-120);
+            star1.moveVertical(-50);
+            star1.changeSize(15);
+            star1.changeColor("yellow");
+            star1.makeVisible();
+            
+            star2.moveHorizontal(-40);
+            star2.moveVertical(-70);
+            star2.changeSize(15);
+            star2.changeColor("yellow");
+            star2.makeVisible();
+            
+            star3.moveHorizontal(10);
+            star3.moveVertical(-50);
+            star3.changeSize(15);
+            star3.changeColor("yellow");
+            star3.makeVisible();
+            
+            star4.moveHorizontal(40);
+            star4.moveVertical(-30);
+            star4.changeSize(15);
+            star4.changeColor("yellow");
+            star4.makeVisible();
+            
+            star5.moveHorizontal(80);
+            star5.moveVertical(-10);
+            star5.changeSize(10);
+            star5.changeColor("yellow");
+            star5.makeVisible();
+            
+            star6.moveHorizontal(120);
+            star6.moveVertical(-30);
+            star6.changeSize(10);
+            star6.changeColor("yellow");
+            star6.makeVisible();
+            
+            star7.moveHorizontal(180);
+            star7.moveVertical(5);
+            star7.changeSize(10);
+            star7.changeColor("yellow");
+            star7.makeVisible();
+            
+            star8.moveHorizontal(220);
+            star8.moveVertical(-35);
+            star8.changeSize(15);
+            star8.changeColor("yellow");
+            star8.makeVisible();
+            
+            star9.moveHorizontal(250);
+            star9.moveVertical(-25);
+            star9.changeSize(10);
+            star9.changeColor("yellow");
+            star9.makeVisible();
+            
             drawn = true;
         }
     }
@@ -66,10 +188,24 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
-        sun.changeColor("black");
+        sky.changeColor("black");
+        houseBase.changeColor("white");
+        houseUpper.changeColor("white");
+        houseRoof.changeColor("white");
+        water.changeColor("white");
+        ground.changeColor("black");
+        woman.changeColor("white");
+        man.changeColor("white");
+        star0.changeColor("white");
+        star1.changeColor("white");
+        star2.changeColor("white");
+        star3.changeColor("white");
+        star4.changeColor("white");
+        star5.changeColor("white");
+        star6.changeColor("white");
+        star7.changeColor("white");
+        star8.changeColor("white");
+        star9.changeColor("white");
     }
 
     /**
@@ -77,9 +213,24 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
-        sun.changeColor("yellow");
+        sky.changeColor("blue");
+        houseBase.changeColor("black");
+        houseUpper.changeColor("black");
+        houseRoof.changeColor("black");
+        water.changeColor("green");
+        ground.changeColor("blue");
+        woman.changeColor("red");
+        man.changeColor("black");
+        star0.changeColor("yellow");
+        star1.changeColor("yellow");
+        star1.changeColor("yellow");
+        star2.changeColor("yellow");
+        star3.changeColor("yellow");
+        star4.changeColor("yellow");
+        star5.changeColor("yellow");
+        star6.changeColor("yellow");
+        star7.changeColor("yellow");
+        star8.changeColor("yellow");
+        star9.changeColor("yellow");
     }
 }
